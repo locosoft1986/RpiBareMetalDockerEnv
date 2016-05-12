@@ -60,3 +60,9 @@ RUN mkdir -p /usr/local/env && \
 ENV PATH /usr/local/env/gcc-arm-none-eabi/bin:/usr/local/env/cmake/bin:$PATH
 
 RUN rm -Rf /usr/local/tmp
+
+# If you want to use Raspberry Pi C++ toolchains, delete '#' of the following two lines.
+
+# RUN git clone https://github.com/raspberrypi/tools.git /usr/local/env/tools
+# ENV PATH /usr/local/env/tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf:$PATH
+ 
