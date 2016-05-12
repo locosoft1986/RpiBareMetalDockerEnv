@@ -57,8 +57,6 @@ RUN mkdir -p /usr/local/env && \
 	cp -Rf /usr/local/tmp/gcc-arm-none-eabi-5_3-2016q1 /usr/local/env/gcc-arm-none-eabi && \
 	cp -Rf /usr/local/tmp/cmake-3.5.2-Linux-x86_64 /usr/local/env/cmake
 
-RUN git clone https://github.com/raspberrypi/tools.git /usr/local/env/tools	
-
-ENV PATH /usr/local/env/gcc-arm-none-eabi/bin:/usr/local/env/cmake/bin:/usr/local/env/tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf:$PATH
+ENV PATH /usr/local/env/gcc-arm-none-eabi/bin:/usr/local/env/cmake/bin:$PATH
 
 RUN rm -Rf /usr/local/tmp
