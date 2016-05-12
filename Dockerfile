@@ -48,7 +48,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 RUN mkdir -p /usr/local/tmp && \ 
 	wget -qO- "https://cmake.org/files/v3.5/cmake-3.5.2-Linux-x86_64.tar.gz" \
 		| tar -xzC /usr/local/tmp
-		
+
 RUN wget -qO- "https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q1-update/+download/gcc-arm-none-eabi-5_3-2016q1-20160330-linux.tar.bz2" \
 		| tar -xjC /usr/local/tmp
 
@@ -57,7 +57,7 @@ RUN mkdir -p /usr/local/env && \
 	cp -Rf /usr/local/tmp/gcc-arm-none-eabi-5_3-2016q1 /usr/local/env/gcc-arm-none-eabi && \
 	cp -Rf /usr/local/tmp/cmake-3.5.2-Linux-x86_64 /usr/local/env/cmake
 
-RUN git clone https://github.com/raspberrypi/tools.git /usr/local/env	
+RUN git clone https://github.com/raspberrypi/tools.git /usr/local/env/tools	
 
 ENV PATH /usr/local/env/gcc-arm-none-eabi/bin:/usr/local/env/cmake/bin:/usr/local/env/tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf:$PATH
 
