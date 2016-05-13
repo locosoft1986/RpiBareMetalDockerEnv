@@ -61,6 +61,10 @@ ENV PATH /usr/local/env/gcc-arm-none-eabi/bin:/usr/local/env/cmake/bin:$PATH
 
 RUN rm -Rf /usr/local/tmp
 
+RUN dpkg --add-architecture i386 && \ 
+	apt-get update &&\
+	apt-get install libc6:i386 
+
 # If you want to use Raspberry Pi C++ toolchains, delete '#' of the following two lines.
 
 # RUN git clone https://github.com/raspberrypi/tools.git /usr/local/env/tools
