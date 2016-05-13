@@ -63,10 +63,11 @@ RUN rm -Rf /usr/local/tmp
 
 RUN dpkg --add-architecture i386 && \ 
 	apt-get update &&\
-	apt-get install libc6:i386 
+	apt-get install libc6:i386 -y 
 
 # If you want to use Raspberry Pi C++ toolchains, delete '#' of the following two lines.
 
 # RUN git clone https://github.com/raspberrypi/tools.git /usr/local/env/tools
 # ENV PATH /usr/local/env/tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf:$PATH
  
+WORKDIR /projects/workspace
