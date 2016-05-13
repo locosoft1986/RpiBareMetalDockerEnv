@@ -25,7 +25,6 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	pkg-config \
 	xfsprogs \
 	tar \
-	python-pip \
     libguestfs-tools \
     libncurses5-dev \
     tree \
@@ -41,9 +40,14 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     vim \
     awscli \
     shellcheck \
+    tmux \
+	zsh \
 	--no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 
+RUN dpkg --add-architecture i386 && \ 
+	apt-get update &&\
+	apt-get install libc6:i386 -y 
 
 RUN mkdir -p /usr/local/tmp && \ 
 	wget -qO- "https://cmake.org/files/v3.5/cmake-3.5.2-Linux-x86_64.tar.gz" \
@@ -61,13 +65,19 @@ ENV PATH /usr/local/env/gcc-arm-none-eabi/bin:/usr/local/env/cmake/bin:$PATH
 
 RUN rm -Rf /usr/local/tmp
 
-RUN dpkg --add-architecture i386 && \ 
-	apt-get update &&\
-	apt-get install libc6:i386 -y 
+RUN curl -#LO https://rvm.io/mpapis.asc && \
+	gpg --import mpapis.asc && \
+	curl -sSL https://get.rvm.io | bash -s stable --ruby && \
+	rvm get stable --autolibs=enable && \
+	rvm install ruby && \
+	rvm --default use ruby-2.3.1 && \
+	gem update --system && \
+	sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"	
+
+WORKDIR /projects/workspace
 
 # If you want to use Raspberry Pi C++ toolchains, delete '#' of the following two lines.
 
 # RUN git clone https://github.com/raspberrypi/tools.git /usr/local/env/tools
 # ENV PATH /usr/local/env/tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf:$PATH
  
-WORKDIR /projects/workspace
