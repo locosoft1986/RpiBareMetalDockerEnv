@@ -40,8 +40,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     vim \
     awscli \
     shellcheck \
-    tmux \
-	zsh \
+    screen \
 	--no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 
@@ -64,15 +63,6 @@ RUN mkdir -p /usr/local/env && \
 ENV PATH /usr/local/env/gcc-arm-none-eabi/bin:/usr/local/env/cmake/bin:$PATH
 
 RUN rm -Rf /usr/local/tmp
-
-RUN curl -#LO https://rvm.io/mpapis.asc && \
-	gpg --import mpapis.asc && \
-	curl -sSL https://get.rvm.io | bash -s stable --ruby && \
-	rvm get stable --autolibs=enable && \
-	rvm install ruby && \
-	rvm --default use ruby-2.3.1 && \
-	gem update --system && \
-	sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"	
 
 WORKDIR /projects/workspace
 
