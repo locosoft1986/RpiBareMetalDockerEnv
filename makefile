@@ -4,4 +4,5 @@ build:
 shell:build
 	docker run -ti --privileged -v $(shell pwd):/projects rpibaremetal bash
 
-
+shwin:build
+	docker run -ti --privileged -v /workspace:/projects rpibaremetal bash
