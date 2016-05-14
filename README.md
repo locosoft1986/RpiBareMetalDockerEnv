@@ -25,8 +25,11 @@ It will set the working directory to "/projects/workspace" which is kept in this
 First, thanks to this post http://stackoverflow.com/questions/30864466/whats-the-best-way-to-share-files-from-windows-to-boot2docker-vm.
 
 
-- Use "C:/Program Files/Oracle/VirtualBox/VBoxManage sharedfolder \
-add default -name workspace -hostpath c:/<your-project-absolute-root-path-in-windows>". 
+- Use the following command line to add an auto-mount volume into the "default" VM image:
+```
+C:/Program Files/Oracle/VirtualBox/VBoxManage sharedfolder \
+add default -name workspace -hostpath c:/your-project-absolute-root-path-in-windows. 
+```
 
 - Or you can use GUI of the VirtualBox to add a share directory which should be named "workspace". Then restart the default VM or just restart computer. If you have problems when starting the Docker Quickstart Terminal, reinstall the vboxdrv.inf in the "C:/Program Files/Oracle/VirtualBox/drivers/vboxdrv" directory by right click it and choose install and restart your computer.
 
@@ -41,7 +44,7 @@ docker-machine ssh default
 
 Make a folder inside the VM: sudo mkdir /workspace
 Mount the Windows folder to it: sudo mount -t vboxsf workspace /workspace
-After that, you can access c:/<your-project-absolute-root-path-in-windows> inside your Boot2Docker VM:
+After that, you can access c:/your-project-absolute-root-path-in-windows inside your Boot2Docker VM:
 ```
 cd /workspace && ls
 ```
