@@ -46,17 +46,17 @@ docker-machine ssh default
 
 Make a folder inside the VM: 
 ```
-sudo mkdir /workspace
+sudo mkdir /projects
 ```
 
 Mount the Windows folder to it: 
 ```
-sudo mount -t vboxsf workspace /workspace
+sudo mount -t vboxsf workspace /projects
 ```
 
 After that, you can access c:/your-project-absolute-root-path-in-windows inside your Boot2Docker VM:
 ```
-cd /workspace && ls
+cd /projects && ls
 ```
 
 - exit the ssh and run:
