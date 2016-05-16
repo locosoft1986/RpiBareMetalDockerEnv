@@ -33,7 +33,7 @@ C:/Program Files/Oracle/VirtualBox/VBoxManage sharedfolder \
 add default -name workspace -hostpath c:/your-project-absolute-root-path-in-windows. 
 ```
 
-- Or you can use GUI of the VirtualBox to add a share directory which should be named "workspace". Then restart the default VM or just restart computer. If you have problems when starting the Docker Quickstart Terminal, reinstall the vboxdrv.inf in the "C:/Program Files/Oracle/VirtualBox/drivers/vboxdrv" directory by right click it and choose install and restart your computer.
+- Or you can use GUI of the VirtualBox to add a share directory which should be named "workspace".
 
 - Start Docker Quickstart Terminal.
 
