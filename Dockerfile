@@ -66,6 +66,8 @@ RUN rm -Rf /usr/local/tmp
 
 WORKDIR /projects/workspace
 
+RUN apt-get install -y genromfs
+
 # If you want to use Raspberry Pi C++ toolchains, delete '#' of the following two lines.
 
 # RUN git clone https://github.com/raspberrypi/tools.git /usr/local/env/tools

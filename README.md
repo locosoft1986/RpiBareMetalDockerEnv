@@ -2,9 +2,11 @@
 
 This is a template dockerfile and makefile for bare metal programming in Raspberry Pi.It includes the arm-none-eabi-gcc 5.3(2016 q1) and CMake 3.5.2.
 
+The workspace directory will be your work directory in the container. You can create or pull new projects in this directory.
+
 ## How to use
 ### Install Docker
-You can refer to https://docs.docker.com to install the docker. If you use windows, the MingW environments are required. And the MSYS and MingW bin directories must be added to the Windows' PATH. And the make in MSYS of the MingW is also required. 
+You can refer to https://docs.docker.com to install the docker. If you use Windows, the MingW environments are required. And the MSYS and MingW bin directories should be added to the Windows' PATH. And the make in MSYS of the MingW is also required. 
 
 ### To build:
 ```
