@@ -2,7 +2,7 @@
 
 This is a template dockerfile and makefile for bare metal programming in Raspberry Pi.It includes the arm-none-eabi-gcc 5.3(2016 q1) and CMake 3.5.2.
 
-The workspace directory will be your work directory in the container. You can create or pull new projects in this directory.
+The workspace directory will be your working directory in the container. You can create or pull new projects in this directory.
 
 ## How to use
 ### Install Docker
