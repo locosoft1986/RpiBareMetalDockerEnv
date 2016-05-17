@@ -42,21 +42,26 @@ add default -name workspace -hostpath c:/your-project-absolute-root-path-in-wind
 docker-machine ssh default
 ```
 
+If the user is not root, use the following command to switch:
+```
+sudo -i
+```
+
 - Then perform the mount:
 
 Make a folder inside the VM: 
 ```
-sudo mkdir /projects
+sudo mkdir /workspace
 ```
 
 Mount the Windows folder to it: 
 ```
-sudo mount -t vboxsf workspace /projects
+sudo mount -t vboxsf workspace /workspace
 ```
 
 After that, you can access c:/your-project-absolute-root-path-in-windows inside your Boot2Docker VM:
 ```
-cd /projects && ls
+cd /workspace && ls
 ```
 
 - exit the ssh and run:
