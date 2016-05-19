@@ -68,6 +68,10 @@ WORKDIR /projects/workspace
 
 RUN apt-get install -y genromfs
 
+# Add your own git user config here.
+# RUN git config --global user.email "you@example.com" && \
+#  git config --global user.name "Your Name"
+
 # If you want to use Raspberry Pi C++ toolchains, delete '#' of the following two lines.
 
 # RUN git clone https://github.com/raspberrypi/tools.git /usr/local/env/tools
