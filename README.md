@@ -21,54 +21,16 @@ make build
 ```
 make shell
 ```
-It will set the working directory to "/projects/workspace" which is kept in this repo.
+It will set the working directory to "/projects". And you can clone or create projects in the workspace directory which is kept in this repo.
+
 
 ### To run interactive shell(Windows):
-First, thanks to this post http://stackoverflow.com/questions/30864466/whats-the-best-way-to-share-files-from-windows-to-boot2docker-vm.
-
-
-- Use the following command line to add an auto-mount volume into the "default" VM image:
-```
-C:/Program Files/Oracle/VirtualBox/VBoxManage sharedfolder \
-add default -name workspace -hostpath c:/your-project-absolute-root-path-in-windows. 
-```
-
-- Or you can use GUI of the VirtualBox to add a share directory which should be named "workspace".
-
-- Start Docker Quickstart Terminal.
-
-- ssh into the Boot2Docker VM for the Docker Quickstart Terminal:
-```
-docker-machine ssh default
-```
-
-If the user is not root, use the following command to switch:
-```
-sudo -i
-```
-
-- Then perform the mount:
-
-Make a folder inside the VM: 
-```
-sudo mkdir /workspace
-```
-
-Mount the Windows folder to it: 
-```
-sudo mount -t vboxsf workspace /workspace
-```
-
-After that, you can access c:/your-project-absolute-root-path-in-windows inside your Boot2Docker VM:
-```
-cd /workspace && ls
-```
-
-- exit the ssh and run:
+First run the following:
 ```
 make shwin
 ```
-The interactive shell should be started.
+
+In Windows system the /projects directory will point to the C:\Users. You have to cd into your "<User Name>" sub-directory and create workspace fold or whatever. Otherwise will get a permission denied error.
 
 
 ## Note

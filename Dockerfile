@@ -64,7 +64,7 @@ ENV PATH /usr/local/env/gcc-arm-none-eabi/bin:/usr/local/env/cmake/bin:$PATH
 
 RUN rm -Rf /usr/local/tmp
 
-WORKDIR /projects/workspace
+WORKDIR /projects
 
 RUN apt-get install -y genromfs
 
