@@ -30,7 +30,7 @@ First run the following:
 make shwin
 ```
 
-In Windows system the /projects directory will point to the C:\Users. You have to cd into your "<User Name>" sub-directory and create workspace fold or whatever. Otherwise will get a permission denied error.
+In Windows system the /projects directory will point to the C:\Users. You have to cd into your "User Name" sub-directory and create workspace fold or whatever. Otherwise will get a permission denied error.
 
 
 ## Note
